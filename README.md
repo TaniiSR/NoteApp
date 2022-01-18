@@ -11,4 +11,5 @@
 * TDD (Unit test)
 * Modular Approach
 * Jetpack Navigation component
+* Kotlin DSL
 
