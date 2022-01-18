@@ -11,6 +11,7 @@
         <activity
             android:name=".ui.mainnote.NoteMainActivity"
             android:configChanges="orientation"
+            android:exported="true"
             android:screenOrientation="portrait" />
 
     </application>

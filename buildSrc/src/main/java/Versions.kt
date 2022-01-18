@@ -32,7 +32,7 @@ object ThirdPartyVersions {
 }
 
 object DataVersions {
-    const val ROOM = "2.3.0"
+    const val ROOM = "2.4.1"
     const val GLIDE = "4.12.0"
     const val GSON = "2.8.7"
 }
