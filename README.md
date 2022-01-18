@@ -9,6 +9,6 @@
 * MVVM
 * Glide
 * TDD (Unit test)
-* Modular Approaach
+* Modular Approach
 * Jetpack Navigation component
 
