@@ -1,4 +1,4 @@
-### This APP Purel Demonstration of Multiodule working in single APP. ###
+### This APP Purely Demonstration of Multi Module working in single APP. ###
 
 ### Using Technologies ###
 
