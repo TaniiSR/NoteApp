@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.task.mynoteapp.R" />
+
+        <variable
+            name="viewModel"
+            type="com.task.mynoteapp.ui.addnote.AddNoteVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.task.uikit.widgets.CoreToolbar
+                    android:id="@+id/clToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:onClick="@{viewModel::onClick}"
+                    app:titleText="@{viewModel.viewState.toolbarTitle}"
+                    app:toolbarTitleStyle="@{R.style.Note_App_TextAppearance_TextView_Heading}" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tiTitle"
+                    style="@style/Note.App.Widget.TextInputLayout.OutLined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium_large"
+                    android:layout_marginTop="@dimen/margin_xxxl"
+                    android:hint="@string/screen_add_note_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clToolbar"
+                    tools:text="@string/screen_add_note_title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/screen_add_note_title"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName|textCapSentences"
+                        android:onTextChanged="@{viewModel::onTitleTextChanged}"
+                        android:singleLine="true"
+                        android:text="@={viewModel.viewState.noteTitle}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tiImageUrl"
+                    style="@style/Note.App.Widget.TextInputLayout.OutLined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium_large"
+                    android:layout_marginTop="@dimen/margin_normal_large"
+                    android:hint="@string/screen_add_note_image_url"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tiTitle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etImageUrl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/screen_add_note_image_url"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName|textCapSentences"
+                        android:singleLine="true"
+                        android:text="@={viewModel.viewState.imageUrl}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tiDescription"
+                    style="@style/Note.App.Widget.TextInputLayout.OutLined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium_large"
+                    android:layout_marginTop="@dimen/margin_normal_large"
+                    android:hint="@string/screen_add_note_description"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tiImageUrl">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_200sdp"
+                        android:gravity="top|start"
+                        android:hint="@string/screen_add_note_description"
+                        android:imeOptions="actionDone"
+                        android:inputType="textMultiLine"
+                        android:onTextChanged="@{viewModel::onDescriptionTextChanged}"
+                        android:padding="@dimen/_20sdp"
+                        android:text="@={viewModel.viewState.noteDescription}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_medium_large"
+                    android:enabled="@{viewModel.viewState.isValid , default = false}"
+                    android:onClick="@{viewModel::onClick}"
+                    android:text="@string/screen_add_note_save"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tiDescription"
+                    app:layout_constraintVertical_bias="0.98"
+                    tools:text="@string/screen_add_note_save" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.task.mynoteapp.R" />
+
+        <variable
+            name="viewModel"
+            type="com.task.mynoteapp.ui.notelist.adapter.NoteItemViewModel" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@drawable/bg_grey_rectangle"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivNoteImage"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:padding="@dimen/_2sdp"
+                android:scaleType="centerInside"
+                app:errorImg="@{R.drawable.ic_note}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:loadImg="@{viewModel.noteDate.noteImageUrl}"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.App.CircleImageView"
+                app:strokeColor="@color/white"
+                app:strokeWidth="@dimen/_2sdp"
+                tools:src="@drawable/ic_note" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTitle"
+                style="@style/Note.App.Widget.TextView.PrimaryDarkColor.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium_large"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:text="@{viewModel.noteDate.noteTitle}"
+                android:textAlignment="viewStart"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="@id/ivNoteImage"
+                app:layout_constraintEnd_toStartOf="@id/ivSelected"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@id/ivNoteImage"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivNoteImage"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Jon Doe" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDescription"
+                style="@style/Note.App.Widget.TextView.PrimaryDarkColor.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_medium_large"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:text='@{viewModel.noteDate.noteDescription}'
+                android:textAlignment="viewStart"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintEnd_toStartOf="@id/ivSelected"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@id/ivNoteImage"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivNoteImage"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                tools:text="Jon Doe" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDate"
+                style="@style/Note.App.Widget.TextView.PrimaryDarkColor.XSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_medium_large"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:text='@{viewModel.noteDate.noteDate}'
+                android:textAlignment="viewStart"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintEnd_toEndOf="@id/ivNoteImage"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@id/ivNoteImage"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="@id/ivNoteImage"
+                app:layout_constraintTop_toBottomOf="@id/ivNoteImage"
+                tools:text="Jon Doe" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvEdit"
+                style="@style/Note.App.Widget.TextView.PrimaryDarkColor.XSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_medium_large"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text='@string/screen_update_note_updated'
+                android:textAlignment="viewStart"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/screen_update_note_updated" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivSelected"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_arrow_right"
+                app:layout_constraintBottom_toBottomOf="@+id/ivNoteImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivNoteImage"
+                tools:src="@drawable/ic_arrow_right" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

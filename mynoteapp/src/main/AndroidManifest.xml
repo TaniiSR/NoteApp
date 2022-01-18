@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.task.mynoteapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:configChanges="orientation"
+        android:screenOrientation="portrait"
+        android:theme="@style/Theme.Base.Note"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.mainnote.NoteMainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+    </application>
+</manifest>

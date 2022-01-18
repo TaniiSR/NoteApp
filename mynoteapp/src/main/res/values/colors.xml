@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    color primary-->
+    <color name="blueWithAHintOfPurple">#514795</color>
+    <!--    color primary 2-->
+    <color name="blueWithAHintOfPurpleTwo">#ffd00f</color>
+    <!--    color primary dark-->
+    <color name="darkSlateBlue">#272260</color>
+    <!--    color primary light-->
+    <color name="brightBlue">#007aff</color>
+    <!--    color Grey Dark-->
+    <color name="blueyGrey">#9391b1</color>
+    <color name="blueWithAHintOfPurpleFaded">#80514795</color>
+    <color name="semiWhite">#f2f1f1</color>
+
+    <color name="grey">#C9C8D9</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="lightBlueGrey">#dae0f3</color>
+    <color name="textInputBackgroundColor">#E8E9F7</color>
+    <color name="semiBlack">#30000000</color>
+    <color name="disabled">#9391B0</color>
+    <color name="divider">#33979798</color>
+    <color name="error">#ff3b31</color>
+
+</resources>

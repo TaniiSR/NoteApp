@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    text colors attributes  -->
+    <attr name="primaryTextColor" format="reference" />
+    <attr name="primaryDarkTextColor" format="reference" />
+    <attr name="secondaryTextColor" format="reference" />
+    <attr name="tertiaryTextColor" format="reference" />
+    <attr name="buttonEnabledColor" format="reference" />
+    <attr name="buttonDisabledColor" format="reference" />
+    <attr name="buttonTextColor" format="reference" />
+    <!--    text colors attributes END -->
+
+</resources>

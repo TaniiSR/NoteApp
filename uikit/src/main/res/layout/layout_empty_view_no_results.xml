@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNoResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-100dp"
+        android:gravity="center"
+        android:textSize="@dimen/_18ssp"
+        android:textStyle="bold"
+        tools:text="@string/common_text_not_available" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNoResultsDes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textSize="@dimen/_14ssp"
+        tools:text="@string/common_text_retry_msg" />
+
+</LinearLayout>

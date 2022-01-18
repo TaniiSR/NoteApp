@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_common_error">Error occurred, please try again</string>
+
+    <!--    Screen Add note-->
+    <string name="screen_add_note_title">Title</string>
+    <string name="screen_add_note_toolbar_title">Add Note</string>
+    <string name="screen_add_note_description">Description</string>
+    <string name="screen_add_note_image_url">Paste any image url</string>
+    <string name="screen_add_note_save">Save</string>
+
+    <!--    Screen Add note-->
+    <string name="screen_update_note_toolbar_title">Update Note</string>
+    <string name="screen_update_note_update">Update</string>
+    <string name="screen_update_note_updated">Updated</string>
+
+
+    <!--Screen note list -->
+    <string name="screen__note_lis_empty">There are not yet any Note.</string>
+    <string name="screen_note_list_toolbar_title">Note List</string>
+
+</resources>

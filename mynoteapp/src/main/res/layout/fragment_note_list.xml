@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.task.mynoteapp.R" />
+
+        <variable
+            name="viewModel"
+            type="com.task.mynoteapp.ui.notelist.NoteListVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.task.uikit.widgets.CoreToolbar
+            android:id="@+id/clToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:onClick="@{viewModel::onClick}"
+            app:titleText="@{viewModel.viewState.toolbarTitle}"
+            app:toolbarTitleStyle="@{R.style.Note_App_TextAppearance_TextView_Heading}" />
+
+
+        <com.task.uikit.widgets.MultiStateView
+            android:id="@+id/multiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/margin_medium"
+            android:animateLayoutChanges="true"
+            app:emptyViewTitle="@{@string/screen__note_lis_empty}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clToolbar"
+            app:msv_emptyView="@layout/layout_empty_view_no_results"
+            app:msv_errorView="@layout/layout_error_view">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBeneficiaries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_extra_small"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:recycleViewAdapter="@{viewModel.noteListAdapter}"
+                tools:itemCount="4"
+                tools:listitem="@layout/layout_note_list_item" />
+        </com.task.uikit.widgets.MultiStateView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAddBeneficiary"
+            style="Note.App.Widget.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:onClick="@{viewModel::onClick}"
+            android:src="@drawable/ic_add"
+            app:backgroundTint="@color/blueWithAHintOfPurpleTwo"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:rippleColor="?attr/colorPrimaryDark" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

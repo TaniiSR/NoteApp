@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //Common
+    <string name="common_text_next">Next</string>
+    <string name="common_text_confirm">Confirm</string>
+    <string name="common_text_close">Close</string>
+    <string name="common_text_search">Search</string>
+    <string name="common_text_save_changes">Save Changes</string>
+    <string name="common_text_do_it_later">Do it Later</string>
+    <string name="common_text_back">Back</string>
+    <string name="common_text_cancel">Cancel</string>
+    <string name="common_text_retry">Retry</string>
+    <string name="common_text_retry_msg">Something went wrong, Please try again.</string>
+    <string name="common_text_not_available">Not available</string>
+</resources>
